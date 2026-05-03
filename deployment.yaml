@@ -3,8 +3,9 @@ kind: Deployment
 metadata:
   name: demo-app
   annotations:
-    argocd-image-updater.argoproj.io/image-list: demo=<ACCOUNT_ID>.dkr.ecr.ap-south-1.amazonaws.com/web-dev
+    argocd-image-updater.argoproj.io/image-list: demo= 010438490109.dkr.ecr.ap-south-1.amazonaws.com/web-dev
     argocd-image-updater.argoproj.io/demo.update-strategy: latest
+    argocd-image-updater.argoproj.io/demo.allow-tags: regexp:^v.*
 spec:
   replicas: 1
   selector:
