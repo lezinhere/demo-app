@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: demo=<ACCOUNT_ID>.dkr.ecr.ap-south-1.amazonaws.com/web-dev
+    argocd-image-updater.argoproj.io/demo.update-strategy: latest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      containers:
+      - name: demo
+        image: <ACCOUNT_ID>.dkr.ecr.ap-south-1.amazonaws.com/web-dev:latest
+        ports:
+        - containerPort: 80
