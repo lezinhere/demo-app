@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: demo
-        image: 010438490109.dkr.ecr.ap-south-1.amazonaws.com/web-dev:v1
+        image: 010438490109.dkr.ecr.ap-south-1.amazonaws.com/web-dev:v2
         ports:
         - containerPort: 80
